@@ -1,50 +1,61 @@
-# React + TypeScript + Vite
+# Geo Contact
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Geo Contact is an offline-first, responsive dashboard application built with ReactJS. It features a sidebar with two main menu options: Dashboard and Add Contact. This app is designed to manage and display contact information with both table and map views.
 
-Currently, two official plugins are available:
+## Deployment
+The project is hosted on Vercel and can be accessed [here](https://geo-contact.vercel.app/add-contact).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Responsive Layout**: Adaptable design for various screen sizes.
+- **Offline-First**: Builts to work effectively even without an internet connection.
+- **Dashboard**:
+  - **Table View**: Displays contact information in a table format.
+  - **Map View**: Shows contacts on a map based on their longitude and latitude.
+- **Add Contact Page**:
+  - Form to add new contacts with fields for Name, Phone Number, Email, Addresses, Longitude, and Latitude.
+  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone the repository:**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   ```bash
+   git clone https://github.com/Sorphy/geo-contact.git
+   ```
+2. **Navigate to the project directory:**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```bash
+   cd geo-contact
+   ```
+2. **Install dependencies:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   yarn install
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## How to Test Offline-First Functionality
+
+  **run build then preview:**
+  
+   ```bash
+   yarn build
+   ```
+   **then**
+
+   ```bash
+   yarn preview
+   ```
+  Then use the url generated on preview to test by:
+    1. open dev tools in chrome
+    2. go to network tab and click on the no throtting to change to offline
+    3. or go to application, and under service worker, tick offline
+    4. then reload page to test if it works while network is off. 
+    
+## Screenshots
+  **Dashboard**
+![Screenshot 2024-08-18 at 22 32 21](https://github.com/user-attachments/assets/241b39be-3221-46b9-aa47-38fcbce51c75)
+
+  **Add contact page**
+![Screenshot 2024-08-18 at 22 32 53](https://github.com/user-attachments/assets/06d9dc58-058f-4356-90f0-f84359f5c660)
+
